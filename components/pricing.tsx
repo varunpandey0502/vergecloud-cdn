@@ -98,14 +98,14 @@ export default function Pricing() {
             {/* Two horizontal gradients */}
             <div className="absolute inset-0 z-0">
               {/* Left gradient */}
-              <div className="absolute left-[20%] top-1/2 -translate-y-1/2 w-[800px] h-[800px]  mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-primary/10 to-[#FFB6C1]/60" />
+              <div className="absolute left-[20%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-[#573FE7]/30 to-transparent" />
               {/* Right gradient */}
-              <div className="absolute right-[20%] top-1/2 -translate-y-1/2 w-[600px] h-[600px]  mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-primary/10 to-[#FFB6C1]/60" />
+              <div className="absolute right-[20%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-[#E7533F]/30 to-transparent" />
 
-              <div className="absolute right-[0%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-primary/10 to-[#FFB6C1]/60" />
+              <div className="absolute right-[0%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] mix-blend-screen filter blur-[80px] opacity-100 bg-gradient-to-b from-[#573FE7]/30 to-transparent" />
             </div>
 
-            <div className="flex flex-col relative z-10 w-full p-4 rounded-3xl bg-primary/40 backdrop-blur-lg backdrop-filter items-center justify-center">
+            <div className="flex flex-col relative z-10 w-full p-4 rounded-3xl bg-gradient-to-b from-[#573FE7]/30 to-[#E7533F]/30 backdrop-blur-lg backdrop-filter items-center justify-center">
               <table className="border-separate border-spacing-x-1 p-4 border-spacing-y-0 rounded-3xl w-full">
                 <thead>
                   <tr>
@@ -194,13 +194,13 @@ export default function Pricing() {
         {/* Mobile View */}
         <div className="block lg:hidden space-y-6">
           {/* Plan Tabs */}
-          <div className="flex rounded-xl bg-[#1A1A3A] p-1">
+          <div className="flex rounded-xl bg-white p-1 border border-black/10">
             <button
               onClick={() => setSelectedPlan("growth")}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "growth"
                   ? "bg-primary text-white"
-                  : "text-white/60"
+                  : "text-black"
               }`}
             >
               Growth
@@ -210,7 +210,7 @@ export default function Pricing() {
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "professional"
                   ? "bg-primary text-white"
-                  : "text-white/60"
+                  : "text-black"
               }`}
             >
               Professional
@@ -220,7 +220,7 @@ export default function Pricing() {
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "enterprise"
                   ? "bg-primary text-white"
-                  : "text-white/60"
+                  : "text-black"
               }`}
             >
               Enterprise
@@ -228,28 +228,20 @@ export default function Pricing() {
           </div>
 
           {/* Selected Plan Features */}
-          <div className="rounded-3xl bg-[#1A1A3A]/90 backdrop-blur-sm overflow-hidden">
+          <div className="rounded-3xl bg-gradient-to-b from-[#573FE7]/30 to-[#E7533F]/30 backdrop-blur-sm overflow-hidden">
             <div className="relative">
               {/* Gradient Effect */}
-              <div
-                className={`absolute inset-0 ${
-                  selectedPlan === "growth"
-                    ? "bg-[#8B5CF6]"
-                    : selectedPlan === "professional"
-                    ? "bg-[#818CF8]"
-                    : "bg-[#F472B6]"
-                } rounded-full mix-blend-plus-lighter filter blur-[100px] opacity-40 pointer-events-none`}
-              />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-primary/80 to-transparent blur-3xl" />
 
               {/* Plan Header */}
               <div className="relative z-10 p-6 text-center border-b border-white/[0.08]">
-                <h3 className="text-xl font-bold text-white">
+                <h3 className="text-xl font-bold text-black">
                   {selectedPlan === "growth"
                     ? "Growth"
                     : selectedPlan === "professional"
                     ? "Professional"
                     : "Enterprise"}
-                  <span className="block text-sm text-white/60 mt-1">
+                  <span className="block text-sm text-black mt-1">
                     {selectedPlan === "growth"
                       ? "₹1679"
                       : selectedPlan === "professional"
@@ -267,8 +259,8 @@ export default function Pricing() {
                     key={index}
                     className="flex items-center justify-between p-4 border-b border-white/[0.08]"
                   >
-                    <span className="text-white">{feature.name}</span>
-                    <span className="text-white ml-4">
+                    <span className="text-black">{feature.name}</span>
+                    <span className="text-black ml-4">
                       {feature[selectedPlan]}
                     </span>
                   </div>
