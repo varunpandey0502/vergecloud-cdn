@@ -121,8 +121,9 @@ export default function Pricing() {
                           </span>
                         </h3>
                       </div>
-                    </th>
+                    </th>{" "}
                     <th className="p-4 w-1/4 bg-[#1F1F47]/10 rounded-3xl relative border-b-2 border-white/80">
+                      {" "}
                       <div className="relative z-10">
                         <h3 className="text-xl font-bold text-black text-center">
                           Professional
@@ -198,8 +199,8 @@ export default function Pricing() {
               onClick={() => setSelectedPlan("growth")}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "growth"
-                  ? "bg-primary text-black"
-                  : "text-black/60"
+                  ? "bg-primary text-white"
+                  : "text-white/60"
               }`}
             >
               Growth
@@ -208,8 +209,8 @@ export default function Pricing() {
               onClick={() => setSelectedPlan("professional")}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "professional"
-                  ? "bg-primary text-black"
-                  : "text-black/60"
+                  ? "bg-primary text-white"
+                  : "text-white/60"
               }`}
             >
               Professional
@@ -218,8 +219,8 @@ export default function Pricing() {
               onClick={() => setSelectedPlan("enterprise")}
               className={`flex-1 py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                 selectedPlan === "enterprise"
-                  ? "bg-primary text-black"
-                  : "text-black/60"
+                  ? "bg-primary text-white"
+                  : "text-white/60"
               }`}
             >
               Enterprise
@@ -241,14 +242,14 @@ export default function Pricing() {
               />
 
               {/* Plan Header */}
-              <div className="relative z-10 p-6 text-center border-b border-black/[0.08]">
-                <h3 className="text-xl font-bold text-black">
+              <div className="relative z-10 p-6 text-center border-b border-white/[0.08]">
+                <h3 className="text-xl font-bold text-white">
                   {selectedPlan === "growth"
                     ? "Growth"
                     : selectedPlan === "professional"
                     ? "Professional"
                     : "Enterprise"}
-                  <span className="block text-sm text-black/60 mt-1">
+                  <span className="block text-sm text-white/60 mt-1">
                     {selectedPlan === "growth"
                       ? "₹1679"
                       : selectedPlan === "professional"
@@ -264,10 +265,10 @@ export default function Pricing() {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-4 border-b border-black/[0.08]"
+                    className="flex items-center justify-between p-4 border-b border-white/[0.08]"
                   >
-                    <span className="text-black">{feature.name}</span>
-                    <span className="text-black ml-4">
+                    <span className="text-white">{feature.name}</span>
+                    <span className="text-white ml-4">
                       {feature[selectedPlan]}
                     </span>
                   </div>
