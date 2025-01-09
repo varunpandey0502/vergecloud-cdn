@@ -53,9 +53,9 @@ export default function Hero() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 pt-2 sm:pt-2 self-center w-full">
             <div className="bg-[#ffffff1a] rounded-lg px-4 sm:px-6 py-4 sm:py-8 border border-white/[0.08] w-full">
-              <h3 className="text-4xl font-bold text-white">6 Mn+</h3>
+              <h3 className="text-4xl font-bold text-white">50 ms</h3>
               <p className="text-xs sm:text-sm text-white mt-1 sm:mt-2">
-                Responses Per Minute
+                Latency in India
               </p>
             </div>
             <div className="bg-[#ffffff1a] rounded-lg px-4 sm:px-6 py-4 sm:py-8 border border-white/[0.08] backdrop-blur-sm">
