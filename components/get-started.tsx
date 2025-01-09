@@ -15,7 +15,7 @@ const steps = [
     title: "Create your Account",
     titleColor: "text-[#6366F1]",
     description:
-      "Sign up using your email and apply the code to enjoy 3 months free - no credit card details required.",
+      "Sign up using your email and apply the code to enjoy 3 months free.",
   },
   {
     number: "3",
@@ -36,7 +36,7 @@ export default function GetStarted() {
           </h2>
           <p className="text-base sm:text-lg text-gray-800">
             Launch your content delivery network quickly with our simple 3-step
-            process. No credit card is required.
+            process.
           </p>
         </div>
 
