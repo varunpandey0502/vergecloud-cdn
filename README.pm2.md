@@ -53,7 +53,6 @@ module.exports = {
       env: {
         NODE_ENV: "production",
         PORT: 3000,
-        NEXT_PUBLIC_BASE_PATH: "/lp/homepage",
       },
     },
   ],
