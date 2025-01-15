@@ -10,31 +10,20 @@ RUN npm install
 # Copy application files
 COPY . .
 
-# Build the Next.js application
+# Build and export static files
 RUN npm run build
 
-# Production stage
-FROM node:18-alpine AS runner
+# Production stage with nginx
+FROM nginx:alpine AS runner
 
-WORKDIR /app
+# Copy nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-ENV NODE_ENV=production
+# Copy static files from builder
+COPY --from=builder /app/out /usr/share/nginx/html
 
-# Add non-root user for security
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+# Expose port 80
+EXPOSE 80
 
-# Copy only necessary files from builder
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
-COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
-
-USER nextjs
-
-EXPOSE 3000
-
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
-
-CMD ["npm", "start"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

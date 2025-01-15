@@ -1,156 +1,139 @@
-# Docker Deployment Guide
+# Docker Deployment Guide (Static Export)
 
-This guide explains how to deploy the Next.js application using Docker.
+This guide explains how to deploy the Next.js application as static files using Docker and Nginx.
 
 ## Prerequisites
 
 - Docker installed
-- Docker Compose (optional)
+- Docker Compose
 - Git (for pulling updates)
 
-## Docker Setup
+## Local Testing with Docker Compose
 
-1. Build the Docker image:
-
-```bash
-docker build -t nextjs-app .
-```
-
-2. Run the container:
-
-```bash
-docker run -d \
-  --name nextjs-app \
-  -p 3000:3000 \
-  -e NODE_ENV=production \
-  nextjs-app
-```
-
-## Docker Compose Setup
-
-Create a `docker-compose.yml` file:
-
-```yaml
-version: "3.8"
-services:
-  nextjs-app:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-    restart: unless-stopped
-```
-
-Start with Docker Compose:
+1. Start the application:
 
 ```bash
 docker-compose up -d
+```
+
+2. Access the application:
+
+- Open your browser and navigate to `http://localhost:8080`
+
+3. View logs:
+
+```bash
+docker-compose logs -f
+```
+
+4. Rebuild after changes:
+
+```bash
+docker-compose up -d --build
 ```
 
 ## Management Commands
 
 ```bash
+# Start services
+docker-compose up -d
+
+# Stop services
+docker-compose down
+
 # View logs
-docker logs nextjs-app
+docker-compose logs -f
 
-# Stop container
-docker stop nextjs-app
-
-# Start container
-docker start nextjs-app
-
-# Remove container
-docker rm nextjs-app
-
-# List containers
-docker ps -a
-
-# Update container (after rebuilding)
+# Rebuild and restart
 docker-compose up -d --build
+
+# Check status
+docker-compose ps
 ```
 
-## Environment Variables
+## Testing Steps
 
-Create a `.env` file for environment variables:
-
-```env
-NODE_ENV=production
-PORT=3000
-# Add other environment variables
-```
-
-Use with Docker:
+1. Build and start:
 
 ```bash
-docker run -d \
-  --name nextjs-app \
-  -p 3000:3000 \
-  --env-file .env \
-  nextjs-app
+docker-compose up -d
 ```
 
-## Docker Run with Base Path
+2. Verify the following:
+
+- Homepage loads at http://localhost:8080
+- Static assets (images, CSS, JS) load correctly
+- Client-side navigation works
+- No 404 errors in browser console
+
+3. Check logs:
 
 ```bash
-docker run -d \
-  --name nextjs-app \
-  -p 3000:3000 \
-  -e NODE_ENV=production \
-  nextjs-app
+docker-compose logs -f
 ```
 
-## Docker Compose with Base Path
+## Production Deployment
+
+For production, consider:
+
+1. Using specific image tags
+2. Implementing SSL/TLS
+3. Setting up proper logging
+4. Configuring resource limits
+5. Using Docker secrets for sensitive data
+
+Example production docker-compose:
 
 ```yaml
 version: "3.8"
 services:
-  nextjs-app:
-    build: .
+  nextjs-static:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
+      - "80:80"
+      - "443:443"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 ```
 
-## Health Checks
+## Troubleshooting
 
-Monitor container health:
+1. Check container status:
 
 ```bash
-docker inspect nextjs-app
-docker stats nextjs-app
+docker-compose ps
 ```
 
-## Updating the Application
-
-1. Pull latest changes:
+2. View logs:
 
 ```bash
-git pull origin main
+docker-compose logs -f
 ```
 
-2. Rebuild and restart:
+3. Inspect nginx configuration:
 
 ```bash
-docker-compose build
-docker-compose up -d
+docker-compose exec nextjs-static cat /etc/nginx/conf.d/default.conf
 ```
 
-## Production Best Practices
-
-1. Use specific image tags instead of `latest`
-2. Implement health checks
-3. Set up logging drivers
-4. Use Docker secrets for sensitive data
-5. Configure resource limits:
+4. Check static files:
 
 ```bash
-docker run -d \
-  --name nextjs-app \
-  -p 3000:3000 \
-  --memory="1g" \
-  --cpus="1.0" \
-  nextjs-app
+docker-compose exec nextjs-static ls -la /usr/share/nginx/html
 ```
