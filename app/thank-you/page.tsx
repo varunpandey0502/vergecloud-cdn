@@ -21,10 +21,11 @@ export default function ThankYou() {
           Thank You for Your Submission!
         </h1>
         <p className="text-lg mb-8 text-gray-600">
-          Thank you! You will receive the coupon code on your email
+          You will receive the coupon code on your email. If not, please check
+          your spam folder.
         </p>
         <Link
-          href="/"
+          href="https://auth.vergecloud.com/u/signup/"
           className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition-opacity"
         >
           Sign up now

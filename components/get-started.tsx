@@ -22,7 +22,7 @@ const steps = [
     title: "Configure and Launch",
     titleColor: "text-[#6366F1]",
     description:
-      "Upload or connect your CDN resources in just a few clicks and start delivering blazing-fast content globally!",
+      "Configure VergeCloud in just a few clicks and start delivering blazing-fast content globally!",
   },
 ];
 
