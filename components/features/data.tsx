@@ -1,7 +1,9 @@
+import { getAssetPath } from "@/lib/utils";
+
 const MediaComponent = () => {
   return (
     <img
-      src="/images/features/media/image.png"
+      src={getAssetPath("/images/features/media/image.png")}
       alt="Media & Entertainment"
       className="w-full h-auto rounded-2xl"
     />
@@ -11,7 +13,7 @@ const MediaComponent = () => {
 const GamingComponent = () => {
   return (
     <img
-      src="/images/features/gaming/image.png"
+      src={getAssetPath("/images/features/gaming/image.png")}
       alt="Gaming"
       className="h-full w-full object-cover rounded-2xl"
     />
@@ -21,7 +23,7 @@ const GamingComponent = () => {
 const ElearningComponent = () => {
   return (
     <img
-      src="/images/features/elearning/image.png"
+      src={getAssetPath("/images/features/elearning/image.png")}
       alt="E-Learning"
       className="h-full w-full object-cover rounded-2xl"
     />
@@ -31,7 +33,7 @@ const ElearningComponent = () => {
 const EcommerceComponent = () => {
   return (
     <img
-      src="/images/features/ecommerce/image.png"
+      src={getAssetPath("/images/features/ecommerce/image.png")}
       alt="E-Commerce"
       className="h-full w-full object-cover rounded-2xl"
     />

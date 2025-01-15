@@ -1,5 +1,6 @@
 "use client";
 
+import { getAssetPath } from "@/lib/utils";
 import { CTAButton } from "./cta-button";
 import {
   Carousel,
@@ -67,7 +68,7 @@ export default function Walkthrough() {
                   <CarouselItem key={index} className="md:basis-1/1">
                     <div className="relative overflow-hidden">
                       <img
-                        src={slide.image}
+                        src={getAssetPath(slide.image)}
                         alt="Platform screenshot"
                         className="w-full h-auto"
                       />

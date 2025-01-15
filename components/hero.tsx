@@ -26,8 +26,8 @@ export default function Hero() {
         preload="none"
         className="absolute inset-0 w-full h-full object-cover -z-10"
       >
-        <source src="/videos/hero-video.webm" type="video/webm" />
-        <source src="/videos/hero-video.mp4" type="video/mp4" />
+        <source src={`/lp/videos/hero-video.webm`} type="video/webm" />
+        <source src={`/lp/videos/hero-video.mp4`} type="video/mp4" />
       </video>
 
       <div className="flex flex-col md:flex-row md:items-center justify-between max-w-screen-xl mx-auto items-center relative z-10 md:gap-32 gap-10">

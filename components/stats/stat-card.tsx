@@ -1,5 +1,7 @@
 "use client";
 
+import { getAssetPath } from "@/lib/utils";
+
 export default function StatCard({
   title,
   description,
@@ -16,7 +18,7 @@ export default function StatCard({
           <div className="col-span-1 flex flex-col justify-between p-4 md:p-8">
             <div className="flex flex-col items-center">
               <img
-                src={iconUrl}
+                src={getAssetPath(iconUrl)}
                 alt={title}
                 className="w-24 h-24 mb-4 md:mb-8"
               />

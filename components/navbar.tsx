@@ -2,7 +2,7 @@
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,8 +35,8 @@ const Logo = ({ scrolled = false }: { scrolled?: boolean }) => {
     <img
       src={
         scrolled
-          ? "/images/vergecloud-logo.svg"
-          : "/images/vergecloud-logo-white.svg"
+          ? getAssetPath("/images/vergecloud-logo.svg")
+          : getAssetPath("/images/vergecloud-logo-white.svg")
       }
       alt="VergeCloud Logo"
       className="h-10 md:h-16"

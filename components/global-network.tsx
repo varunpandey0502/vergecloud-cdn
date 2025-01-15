@@ -1,6 +1,7 @@
 "use client";
 
 import { CTAButton } from "./cta-button";
+import Image from "next/image";
 
 export default function GlobalNetwork() {
   return (
@@ -20,9 +21,11 @@ export default function GlobalNetwork() {
 
         {/* World Map */}
         <div className="mt-16 relative">
-          <img
+          <Image
             src="/images/network/world-map.png"
             alt="VergeCloud Global Network"
+            width={1200}
+            height={600}
             className="w-full h-auto"
           />
         </div>

@@ -1,3 +1,4 @@
+import { getAssetPath } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 export const FeatureDisplay = ({
@@ -34,7 +35,11 @@ export const FeatureDisplay = ({
         {cardSubtitle.map((feature, index) => (
           <div key={index} className="flex items-start gap-6">
             <div className="flex-shrink-0 w-16 h-16 rounded-full bg-[#573FE7]/10 flex items-center justify-center shadow-md shadow-[#573FE7]/20 backdrop-blur-md">
-              <img src={feature.icon} alt={feature.title} className="w-8 h-8" />
+              <img
+                src={getAssetPath(feature.icon)}
+                alt={feature.title}
+                className="w-8 h-8"
+              />
             </div>
             <div className="space-y-2">
               <h3 className="text-primary text-xl font-semibold">
