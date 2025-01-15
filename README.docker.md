@@ -23,6 +23,7 @@ docker run -d \
   --name nextjs-app \
   -p 3000:3000 \
   -e NODE_ENV=production \
+  -e NEXT_PUBLIC_BASE_PATH=/lp \
   nextjs-app
 ```
 
@@ -39,6 +40,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
+      - NEXT_PUBLIC_BASE_PATH=/lp
     restart: unless-stopped
 ```
 
@@ -77,7 +79,7 @@ Create a `.env` file for environment variables:
 ```env
 NODE_ENV=production
 PORT=3000
-NEXT_PUBLIC_BASE_PATH=/lp/homepage
+NEXT_PUBLIC_BASE_PATH=/lp
 # Add other environment variables
 ```
 
@@ -98,7 +100,7 @@ docker run -d \
   --name nextjs-app \
   -p 3000:3000 \
   -e NODE_ENV=production \
-  -e NEXT_PUBLIC_BASE_PATH=/lp/homepage \
+  -e NEXT_PUBLIC_BASE_PATH=/lp \
   nextjs-app
 ```
 
@@ -113,7 +115,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_BASE_PATH=/lp/homepage
+      - NEXT_PUBLIC_BASE_PATH=/lp
     restart: unless-stopped
 ```
 
