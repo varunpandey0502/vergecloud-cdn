@@ -49,7 +49,7 @@ export default function GetStarted() {
           />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-20 items-center">
           <div className="space-y-8 sm:space-y-12">
             <div className="space-y-6 sm:space-y-8">
               {steps.map((step) => (
