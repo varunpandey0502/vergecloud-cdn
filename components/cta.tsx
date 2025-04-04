@@ -11,10 +11,10 @@ export const Cta = () => {
           {/* Content */}
           <div className="flex flex-col items-center text-center space-y-6 relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold text-white">
-              3 Months On Us. Sign Up and Save!
+              Ready to transform your content delivery?
             </h2>
             <p className="text-lg text-white max-w-2xl">
-              Get started in seconds. Limited Time Offer.
+              Take the Next Step with VergeCloud
             </p>
             <CTAButton />
           </div>

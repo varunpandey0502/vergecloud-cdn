@@ -6,19 +6,12 @@ import { Button } from "./ui/button";
 const steps = [
   {
     number: "1",
-    title: "Get the Code",
+    title: "Create your Account",
     titleColor: "text-[#6366F1]",
-    description: "Fill up the form to receive your exclusive discount code.",
+    description: "Sign up using your email",
   },
   {
     number: "2",
-    title: "Create your Account",
-    titleColor: "text-[#6366F1]",
-    description:
-      "Sign up using your email and apply the code to enjoy 3 months free.",
-  },
-  {
-    number: "3",
     title: "Configure and Launch",
     titleColor: "text-[#6366F1]",
     description:
@@ -35,7 +28,7 @@ export default function GetStarted() {
             Get Started in less than 5 Minutes
           </h2>
           <p className="text-base sm:text-lg text-gray-800">
-            Launch your content delivery network quickly with our simple 3-step
+            Launch your content delivery network quickly with our simple 2-step
             process.
           </p>
         </div>

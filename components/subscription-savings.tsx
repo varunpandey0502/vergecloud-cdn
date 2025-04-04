@@ -12,11 +12,10 @@ export default function SubscriptionSavings() {
       <div className="max-w-screen-xl mx-auto rounded-2xl md:rounded-3xl bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] p-6 md:p-16">
         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
           <h2 className="text-2xl md:text-5xl font-bold text-white">
-            Save 70% by Subscribing for a Year
+            Save 30% On The Annual Plan
           </h2>
           <p className="text-base md:text-lg text-gray-400 max-w-2xl">
-            Maximize value and minimize costs with VergeCloud&apos;s annual
-            plan.
+            Maximize value and minimize costs
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full max-w-6xl mt-6 md:mt-8">

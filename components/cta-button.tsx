@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "./ui/button";
 
-export const CTAButton = ({ text = "Get Started For Free" }) => {
+export const CTAButton = ({ text = "Get Started" }) => {
   const scrollToForm = () => {
     const formElement = document.getElementById("form");
     if (formElement) {

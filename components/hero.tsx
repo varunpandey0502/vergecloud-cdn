@@ -42,13 +42,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="md:text-xl text-md text-white">
-            Now{" "}
-            <span className="text-[#4ADE80] font-extrabold">
-              free for 3 months
-            </span>
-            , on our Growth and Professional plan, on signing up
-            <br />
-            before 31st January 2025!
+            Faster, Smarter, and Safer Content for Every User.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 pt-2 sm:pt-2 self-center w-full">
