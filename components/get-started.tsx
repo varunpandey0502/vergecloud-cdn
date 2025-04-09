@@ -36,7 +36,7 @@ export default function GetStarted() {
         {/* Image shown above grid on mobile */}
         <div className="lg:hidden mb-8">
           <img
-            src="/images/get-started/illustration.png"
+            src="/lp/images/get-started/illustration.png"
             alt="Get Started Illustration"
             className="w-full h-auto"
           />
@@ -78,7 +78,7 @@ export default function GetStarted() {
           {/* Image hidden on mobile, shown on desktop */}
           <div className="relative hidden lg:block">
             <img
-              src="/images/get-started/illustration.png"
+              src="/lp/images/get-started/illustration.png"
               alt="Get Started Illustration"
               className="w-full h-auto"
             />

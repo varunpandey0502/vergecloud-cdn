@@ -4,6 +4,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: "export",
+  assetPrefix: "/lp",
 };
 
 export default nextConfig;

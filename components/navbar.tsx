@@ -35,8 +35,8 @@ const Logo = ({ scrolled = false }: { scrolled?: boolean }) => {
     <img
       src={
         scrolled
-          ? "/images/vergecloud-logo.svg"
-          : "/images/vergecloud-logo-white.svg"
+          ? "/lp/images/vergecloud-logo.svg"
+          : "/lp/images/vergecloud-logo-white.svg"
       }
       alt="VergeCloud Logo"
       className="h-10 md:h-16"

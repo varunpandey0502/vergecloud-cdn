@@ -11,17 +11,17 @@ import {
 
 const slides = [
   {
-    image: "/images/walkthrough/feature-1.png",
+    image: "/lp/images/walkthrough/feature-1.png",
     title: "Seamless Setup, Instant Results",
     description: "",
   },
   {
-    image: "/images/walkthrough/feature-2.jpeg",
+    image: "/lp/images/walkthrough/feature-2.jpeg",
     title: "Seamless Setup",
     description: "",
   },
   {
-    image: "/images/walkthrough/feature-3.jpeg",
+    image: "/lp/images/walkthrough/feature-3.jpeg",
     title: "Seamless Setup",
     description: "",
   },
@@ -33,7 +33,7 @@ export default function Walkthrough() {
       {/* Grid Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/walkthrough/grid.png")' }}
+        style={{ backgroundImage: 'url("/lp/images/walkthrough/grid.png")' }}
       />
 
       {/* Content */}

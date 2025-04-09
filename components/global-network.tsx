@@ -21,7 +21,7 @@ export default function GlobalNetwork() {
         {/* World Map */}
         <div className="mt-16 relative">
           <img
-            src="/images/network/world-map.png"
+            src="/lp/images/network/world-map.png"
             alt="VergeCloud Global Network"
             className="w-full h-auto"
           />

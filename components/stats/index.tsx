@@ -8,22 +8,22 @@ const stats = [
   {
     title: "25%",
     description: "Reduction in time spent on performance reviews",
-    iconUrl: "/images/stats/time.svg",
+    iconUrl: "/lp/images/stats/time.svg",
   },
   {
     title: "30%",
     description: "Increase in goal completion rates",
-    iconUrl: "/images/stats/goal.svg",
+    iconUrl: "/lp/images/stats/goal.svg",
   },
   {
     title: "40%",
     description: "Improvement in employee feedback frequency and engagement",
-    iconUrl: "/images/stats/feedback.svg",
+    iconUrl: "/lp/images/stats/feedback.svg",
   },
   {
     title: "20%",
     description: "Boost in identifying and addressing skill gaps",
-    iconUrl: "/images/stats/skill.svg",
+    iconUrl: "/lp/images/stats/skill.svg",
   },
 ];
 
